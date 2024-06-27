@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Personas</title>
+    <!-- Enlaces a archivos CSS de Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css" type="text/css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css"/>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado con estilo de Bootstrap -->
+        <h1 class="mt-5 mb-4">Gestión de Personas</h1>
+        <!-- Formulario con estilo de Bootstrap -->
+        <form id="personForm" novalidate>
+            <input type="hidden" id="id" name="id">
+            <div class="form-group">
+                <label for="doce_nombre">Nombre:</label>
+                <input type="text" class="form-control" id="doce_nombre" name="doce_nombre" required pattern="[A-Za-z\s]+" title="Solo letras y espacios">
+                <div class="invalid-feedback">Por favor, ingrese un nombre válido.</div>
+            </div>
+            <div class="form-group">
+                <label for="doce_apellido">Apellido:</label>
+                <input type="text" class="form-control" id="doce_apellido" name="doce_apellido" required pattern="[A-Za-z\s]+" title="Solo letras y espacios">
+                <div class="invalid-feedback">Por favor, ingrese un apellido válido.</div>
+            </div>
+            <div class="form-group">
+                <label for="per_cumple">Cumpleaños:</label>
+                <input type="date" class="form-control" id="per_cumple" name="per_cumple" required>
+                <div class="invalid-feedback">Por favor, ingrese una fecha válida.</div>
+            </div>
+            <div class="form-group">
+                <label for="per_mail">Correo Electrónico:</label>
+                <input type="email" class="form-control" id="per_mail" name="per_mail" required>
+                <div class="invalid-feedback">Por favor, ingrese un correo electrónico válido.</div>
+            </div>
+            <div class="form-group">
+                <label for="doce_cel">Celular:</label>
+                <input type="tel" class="form-control" id="doce_cel" name="doce_cel">
+            </div>
+            <button type="submit" class="btn btn-primary" id="saveButton">Guardar</button>
+            <button type="reset" class="btn btn-secondary" id="resetButton">Limpiar</button>
+        </form>
+
+       
+        <h2 class="mt-5">Lista de Personas</h2>
+        <table class="table table-striped" id="personTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cumpleaños</th>
+                    <th>Correo Electrónico</th>
+                    <th>Celular</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+</html>
